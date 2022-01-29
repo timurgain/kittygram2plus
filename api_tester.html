@@ -1,0 +1,75 @@
+###
+
+GET http://127.0.0.1:8000/users/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQyOTM0NjIzLCJqdGkiOiIzYWIzNDcyMDE4NzU0M2QwYWM0MDVhZGQyZDMwZGVjNSIsInVzZXJfaWQiOjF9.UcxxrIxrgXXPgUhgEjXmWKVa-Lw2SzKOMD_mwEJXILA
+
+### --- user1
+
+POST http://127.0.0.1:8000/auth/users/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "user1",
+    "password": "one1one1"
+}
+
+###
+
+POST http://127.0.0.1:8000/auth/jwt/create/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "user1",
+    "password": "one1one1"
+}
+
+### --- user2
+
+POST http://127.0.0.1:8000/auth/users/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "user2",
+    "password": "two2two2"
+}
+
+###
+
+POST http://127.0.0.1:8000/auth/jwt/create/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "user2",
+    "password": "two2two2"
+}
+
+### --- cats
+
+POST http://127.0.0.1:8000/cats/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzMzIwNzczLCJqdGkiOiI2MGE5OGE4MTM4MWI0NDUwYTdhNGIzZjhiN2JmOTM5MyIsInVzZXJfaWQiOjF9.jZCmwUxN34GkN0gwqiHBxhVTjZEuGHqWcGxmaU44DWQ
+
+{
+    "name": "Мурка",
+    "color": "Mixed",
+    "birth_year": 2012
+} 
+
+###
+
+GET http://127.0.0.1:8000/cats/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Мурка",
+    "color": "Mixed",
+    "birth_year": 2012
+} 
+
+###
+
+GET http://127.0.0.1:8000/cats/?color=black HTTP/1.1
+Content-Type: application/json
+
+###
