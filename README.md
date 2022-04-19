@@ -1,42 +1,57 @@
-### Как запустить проект:
+# Kittygram, API-project
 
-Клонировать репозиторий и перейти в него в командной строке:
+## Description
+
+The project provides an API for registering cats and their owners, as well as obtaining data about them.
+
+To access the API, the issue of a token is connected.
+Pagination, throttling, permissions are also configured.
+
+## Technologies
+
+- Python 3;
+- Django REST Framework;
+- SQLlite.
+
+## Installation and launch
+
+Clone repository and navigate to folder on command line::
 
 ```
-git clone https://github.com/yandex-praktikum/kittygram2plus.git
+git clone ...
 ```
 
 ```
 cd kittygram2plus
 ```
 
-Cоздать и активировать виртуальное окружение:
+Create and activate virtual environment:
 
 ```
-python3 -m venv env
+python3 -m venv venv
 ```
 
 ```
-source env/bin/activate
+source venv/bin/activate
 ```
 
 ```
 python3 -m pip install --upgrade pip
 ```
 
-Установить зависимости из файла requirements.txt:
+Install dependencies from requirements.txt file:
 
 ```
 pip install -r requirements.txt
 ```
 
-Выполнить миграции:
+Run migrations:
 
 ```
 python3 manage.py migrate
 ```
 
-Запустить проект:
+Launch the project:
 
 ```
 python3 manage.py runserver
